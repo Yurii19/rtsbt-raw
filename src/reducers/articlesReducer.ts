@@ -29,6 +29,6 @@ function articlesReducer(state = initialState, action: IAction) {
   }
 }
 
-interface IPayload { articles: []}
+interface IPayload { articles: string[]}
 export const getArticles = (payload: IPayload) => ({ type: GET_ARTICLES, payload });
 export default articlesReducer;

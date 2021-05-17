@@ -34,10 +34,13 @@ export default function Home() {
       <Box className={classes.root} width="100%">
         <h3>Main Content</h3>
         <Article
-          //className={classes.content}
+          isPreview={false}
+          isMark={false}
+          
           content={{
             name: "Greetings",
-            text: "Welcome to our app"
+            text: "Welcome to our app",
+            id: 0
           }}
         />
       </Box>

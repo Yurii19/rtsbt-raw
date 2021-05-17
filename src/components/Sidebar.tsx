@@ -2,11 +2,11 @@ import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { colors } from "../theme";
 
-interface IProps {
+interface IPropsSidebar {
   location: string;
   mats?: [];
 }
-const Sidebar = (props: IProps) => {
+const Sidebar = (props: IPropsSidebar) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       "@media (max-width: 700px)": {

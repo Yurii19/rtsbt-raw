@@ -9,9 +9,13 @@ import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
+import { useLocation } from "react-router-dom";
 
 function App() {
- // console.log(location.pathname);
+ //console.log(location);
+
+//  const loc = useLocation();
+//  console.log(loc);
   return (
     <div className="App">
       <ThemeProvider theme={theme}>

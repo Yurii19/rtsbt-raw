@@ -1,29 +1,24 @@
 import React from "react";
-import Background from "../images/bigun.jpg";
 import {
-  Button,
   Box,
-  Typography,
-  TextField,
-  InputLabel,
-  AppBar,
   Toolbar,
   Tabs,
   Tab,
-  Paper,
   makeStyles
 } from "@material-ui/core";
-//import { Box,  } from "@material-ui/core";
 import { colors } from "../theme";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+interface IPropsHeader {}
 
 const Header = (props: any) => {
   const tabs = ["/", "/articles", "/training"];
-  const [value, setValue] = React.useState(props.location);
+  const currentRoute = useLocation();
+  const [value, setValue] = React.useState(currentRoute.pathname);
   const useStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: colors.tBlue,
-      // background: `linear-gradient(90deg, ${colors.hardBlue} 0%, ${colors.tBlue} 25%, ${colors.hardBlue} 100%);`
       fontFamily: "serif",
       width: "100%",
       "@media (max-width: 700px)": {
@@ -39,8 +34,6 @@ const Header = (props: any) => {
       borderRadius: "50%",
       backgroundSize: "cover",
       backgroundImage: `url(https://www.dropbox.com/s/fp5nramwkl8x22w/bigun23.jpg?dl=1)`
-      // border: `2px solid blue`
-      // boxShadow: ` inset 0px 0px 15px 3px ${colors.tBlue};`
     }
   }));
   const classes = useStyles();
@@ -54,9 +47,6 @@ const Header = (props: any) => {
       <Box pr={6} pl={6} display="flex" alignItems="center">
         <div
           className={classes.logo}
-          // style={{
-          //   backgroundImage: `url(${Background})`
-          // }}
         ></div>
       </Box>
       <Toolbar>
